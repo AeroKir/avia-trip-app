@@ -1,0 +1,21 @@
+.btn-default {
+  display: inline-block;
+  min-width: 48px;
+  min-height: 48px;
+  border: none;
+  background-color: #BDC3C7;
+  color: #1C2A43;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-default:hover {
+  background-color: #D5D8DB;
+}
+
+.btn-default[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

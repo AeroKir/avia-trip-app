@@ -1,0 +1,98 @@
+.flight-card {
+  display: flex;
+  /* width: 90%; */
+  margin-left: 22px;
+  margin-bottom: 22px;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.flight-card-aside {
+  width: 200px;
+  padding: 20px 20px;
+  border-right: 1px solid #e1e3e4;
+}
+
+.airline-logo {
+  width: 120px;
+  height: auto;
+  margin-left: calc(100% / 6);
+  padding-bottom: 25px;
+}
+
+.flight-card-buy-btn {
+  background-color: #f16b26;
+  color: #fef2ea;
+  width: 161px;
+  height: 57px;
+  border-radius: 7px;
+}
+
+.flight-card-buy-btn:hover {
+  background-color: #f37f27;
+  color: #e4e4e4;
+}
+
+.flight-card-main {
+  display: flex;
+  justify-content: space-between; 
+  width: 367px;
+  padding: 20px 20px;
+}
+
+.departure-info-block,
+.arrival-info-block {
+  width: 35%;
+  /* border:  1px solid; */
+}
+
+.arrival-info-block {
+  text-align: right;
+}
+
+.transfer-info-block {
+  width: 30%;
+}
+
+.flight-card-time {
+  font-size: 2.5em;
+  padding-bottom: 3px;
+}
+
+.flight-card-airport-name,
+.flight-card-date {
+  font-size: 0.95em;
+  padding-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flight-card-date {
+  color: #aab0b2;
+}
+
+.transfer-info-block {
+  position: relative;
+  height: 30px;
+  color: #aab0b2;
+  font-size: 14px;
+}
+
+.transfer-info-block::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: -15px;
+  width: 100px;
+  height: 1px;
+  border-bottom: 1px solid;
+}
+
+.transfer-info-block::after {
+  content: url('../../icons/plane-gray.svg');
+  position: absolute;
+  top: 15px;
+  left: 87px;
+}

@@ -1,0 +1,16 @@
+.list-group {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list-group.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-group.horizontal>li {
+  min-width: 70px;
+}

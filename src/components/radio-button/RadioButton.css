@@ -1,0 +1,91 @@
+.input-label {
+  padding-left: 0.5em;
+}
+
+.input-radio-default {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.input-radio-default+.radio-check-box {
+  position: absolute;
+  margin-top: 0.2em;
+  margin-left: -1.5em;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-box-shadow: 0 0 0 0.1em #494949;
+          box-shadow: 0 0 0 0.1em #494949;
+}
+
+/* Checked */
+
+.input-radio-default:checked+.radio-check-box {
+  -webkit-box-shadow: 0 0 0 0.1em #2196f3;
+          box-shadow: 0 0 0 0.1em #2196f3;
+  background-color: #f1fcff;
+  background-image: url('./icons/radio-check-dot.svg');
+}
+
+/* Focused */
+
+.input-radio-default:focus+.radio-check-box {
+  -webkit-box-shadow:
+				0 0 0 0.1em #2196f3,
+				0 0 0 0.2em #7ED321;
+          box-shadow:
+				0 0 0 0.1em #2196f3,
+				0 0 0 0.2em #7ED321;
+}
+
+/* Disabled */
+
+.input-radio-default:disabled+.radio-check-box {
+  -webkit-box-shadow: 0 0 0 0.1em #9B9B9B;
+          box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+
+.input-radio-default:checked:disabled+.radio-check-box {
+  background-color: #9B9B9B;
+}
+
+/* Like a button view */
+
+.input-radio-default.simpleButtonView+.radio-check-box {
+  display: inline-block;
+  width: 68px;
+  height: 40px;
+  margin: -2px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  background-image: none;
+  color: #339ff4;
+  padding-top: 12px;
+  padding-left: 20px;
+  border: 1px solid #d2d5d6;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* .input-radio-default.simpleButtonView+.radio-check-box::before {
+  content: 'UAH';
+} */
+
+.input-radio-default.simpleButtonView:checked+.radio-check-box {
+  background-color: #0080ff;
+  color: #ffffff;
+}
+
+.input-radio-default.simpleButtonView:hover+.radio-check-box {
+  background-color: #f2fcff;
+  color: #339ff4;
+  border: 1px solid #339ff4;
+}

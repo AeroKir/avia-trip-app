@@ -1,0 +1,57 @@
+.input-label {
+  padding-left: 0.5em;
+}
+
+.input-checkbox-default {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.input-checkbox-default+.check-box {
+  position: absolute;
+  margin-top: 0.2em;
+  margin-left: -1.5em;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 0.05em;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-box-shadow: 0 0 0 0.1em #494949;
+          box-shadow: 0 0 0 0.1em #494949;
+}
+
+/* Checked */
+
+.input-checkbox-default:checked+.check-box {
+  -webkit-box-shadow: 0 0 0 0.1em #2196f3;
+          box-shadow: 0 0 0 0.1em #2196f3;
+  background-color: #f1fcff;
+  background-image: url('./icons/check-arrow.svg');
+}
+
+/* Focused */
+
+.input-checkbox-default:focus+.check-box {
+  -webkit-box-shadow:
+				0 0 0 0.1em #2196f3,
+				0 0 0 0.2em #7ED321;
+          box-shadow:
+				0 0 0 0.1em #2196f3,
+				0 0 0 0.2em #7ED321;
+}
+
+/* Disabled */
+
+.input-checkbox-default:disabled+.check-box {
+  -webkit-box-shadow: 0 0 0 0.1em #9B9B9B;
+          box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+
+.input-checkbox-default:checked:disabled+.check-box {
+  background-color: #9B9B9B;
+}

@@ -1,0 +1,8 @@
+.radio-btn-group {
+  display: flex;
+}
+
+.radio-btn-group.vertical {
+  display: flex;
+  flex-direction: column;
+}
