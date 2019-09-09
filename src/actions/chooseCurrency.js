@@ -10,13 +10,15 @@ export function chooseUAHCurrency() {
   };
 }
 
-export const chooseUSDCurrency = {
-  type: CHOOSE_USD_CURRENCY,
-  payload: {
-    currencyHTMLEntitySymbol: '&#36;',
-    checked: true,
-  },
-};
+export function chooseUSDCurrency() {
+  return {
+    type: CHOOSE_USD_CURRENCY,
+    payload: {
+      currencyHTMLEntitySymbol: '&#36;',
+      checked: true,
+    },
+  };
+}
 
 export const chooseEURCurrency = {
   type: CHOOSE_EUR_CURRENCY,
