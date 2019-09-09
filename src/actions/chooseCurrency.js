@@ -20,10 +20,12 @@ export function chooseUSDCurrency() {
   };
 }
 
-export const chooseEURCurrency = {
-  type: CHOOSE_EUR_CURRENCY,
-  payload: {
-    currencyHTMLEntitySymbol: '&#8364;',
-    checked: true,
-  },
-};
+export function chooseEURCurrency() {
+  return {
+    type: CHOOSE_EUR_CURRENCY,
+    payload: {
+      currencyHTMLEntitySymbol: '&#8364;',
+      checked: true,
+    },
+  };
+}
