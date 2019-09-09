@@ -12,9 +12,9 @@ function chooseCurrencyReducer(state = initialState, action) {
     case CHOOSE_UAH_CURRENCY:
       return state;
     case CHOOSE_USD_CURRENCY:
-      return state;
+      return { ...state, checked: action.checked };
     case CHOOSE_EUR_CURRENCY:
-      return state;
+      return { ...state, checked: action.checked };
     default:
       return state;
   }
