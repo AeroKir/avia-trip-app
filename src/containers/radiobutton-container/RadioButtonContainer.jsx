@@ -51,7 +51,7 @@ class RadioButtonContainer extends React.Component {
 }
 
 RadioButtonContainer.propTypes = {
-  currency: PropTypes.arrayOf,
+  currency: PropTypes.arrayOf(PropTypes.object),
 };
 
 RadioButtonContainer.defaultProps = {
