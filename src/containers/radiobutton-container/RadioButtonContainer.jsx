@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import RadioButton from '../../components/radio-button/RadioButton';
 import RadioButtonGroup from '../../components/radio-button-group/RadioButtonGroup';
-import CURRENCY_CONFIG from '../../config/currency-config';
 
 class RadioButtonContainer extends React.Component {
   constructor(props) {
@@ -25,11 +25,12 @@ class RadioButtonContainer extends React.Component {
 
   render() {
     const { selectedOption } = this.state;
+    const { currency } = this.props;
 
     return (
       <RadioButtonGroup>
         <ListGroup horizontal>
-          {CURRENCY_CONFIG.map(item => (
+          {currency.map(item => (
             <ListGroupItem key={item.id}>
               <RadioButton
                 id={item.id}
@@ -49,10 +50,18 @@ class RadioButtonContainer extends React.Component {
   }
 }
 
+RadioButtonContainer.propTypes = {
+  currency: PropTypes.arrayOf,
+};
+
+RadioButtonContainer.defaultProps = {
+  currency: [],
+};
+
 function mapStateToProps(store) {
   console.log(store);
   return {
-    checked: store.checked,
+    currency: store.currency,
   };
 }
 
