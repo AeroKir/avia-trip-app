@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import RadioButton from '../../components/radio-button/RadioButton';
 import RadioButtonGroup from '../../components/radio-button-group/RadioButtonGroup';
 
+import { chooseCurrency } from '../../reducers/rootReducer';
+
 class RadioButtonContainer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedOption: 'uah',
+      checked: true,
     };
 
     this.handleRadioSelectChange = this.handleRadioSelectChange.bind(this);
@@ -19,13 +22,16 @@ class RadioButtonContainer extends React.Component {
 
   handleRadioSelectChange(event) {
     this.setState({
-      selectedOption: event.target.value,
+      checked: event.target.value,
     });
   }
 
   render() {
-    const { selectedOption } = this.state;
-    const { currency } = this.props;
+    const { checked } = this.state;
+    const { currency, chooseCurrency } = this.props;
+    const { dispatch } = this.props;
+
+    console.log(this.props);
 
     return (
       <RadioButtonGroup>
@@ -38,8 +44,10 @@ class RadioButtonContainer extends React.Component {
                 name={item.name}
                 value={item.value}
                 label={item.label}
-                checked={selectedOption === item.value}
-                onChange={this.handleRadioSelectChange}
+                checked={item.checked}
+                onChange={(event) => {
+                  chooseCurrency(event.target.value);
+                }}
                 simpleButtonView
               />
             </ListGroupItem>
@@ -65,4 +73,10 @@ function mapStateToProps(store) {
   };
 }
 
-export default connect(mapStateToProps)(RadioButtonContainer);
+function mapDispatchToProps(dispatch) {
+  return {
+    chooseCurrency: bindActionCreators(chooseCurrency, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RadioButtonContainer);
