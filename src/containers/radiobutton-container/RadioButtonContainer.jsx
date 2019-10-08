@@ -27,11 +27,7 @@ class RadioButtonContainer extends React.Component {
   }
 
   render() {
-    const { checked } = this.state;
     const { currency, chooseCurrency } = this.props;
-    const { dispatch } = this.props;
-
-    console.log(this.props);
 
     return (
       <RadioButtonGroup>

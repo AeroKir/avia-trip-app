@@ -1,20 +1,40 @@
-import CURRENCY_CONFIG from '../config/currency-config';
 import { CHOOSE_UAH_CURRENCY, CHOOSE_USD_CURRENCY, CHOOSE_EUR_CURRENCY } from '../constants/actionTypes';
+// import initialState from '../store/initialState';
 
 const initialState = {
-  CURRENCY_CONFIG,
+  currency: [
+    {
+      id: 'input-currency-uah',
+      name: 'currency',
+      value: 'uah',
+      label: 'UAH',
+      checked: true,
+    },
+    {
+      id: 'input-currency-usd',
+      name: 'currency',
+      value: 'usd',
+      label: 'USD',
+      checked: false,
+    },
+    {
+      id: 'input-currency-eur',
+      name: 'currency',
+      value: 'eur',
+      label: 'EUR',
+      checked: false,
+    },
+  ],
 };
-
-console.log(initialState);
 
 function chooseCurrencyReducer(state = initialState, action) {
   switch (action.type) {
     case CHOOSE_UAH_CURRENCY:
       return state;
     case CHOOSE_USD_CURRENCY:
-      return { ...state, checked: action.checked };
+      return { ...state, checked: action.payload.checked };
     case CHOOSE_EUR_CURRENCY:
-      return { ...state, checked: action.checked };
+      return { ...state, checked: action.payload.checked };
     default:
       return state;
   }

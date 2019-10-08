@@ -1,8 +1,11 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import Checkbox from '../../components/checkbox/Checkbox';
-import FLIGHT_SEARCH_CONDITIONS from '../../config/flight-search-conditions';
+
+import { flightConditionChoice } from '../../reducers/rootReducer';
 
 class CheckboxContainer extends React.Component {
   constructor(props) {
@@ -16,30 +19,36 @@ class CheckboxContainer extends React.Component {
   }
 
   handleCheckboxChange(event) {
-    const item = event.target.value;
-    console.log(item);
+    const itemValue = event.target.value;
+    
     const isChecked = event.target.checked;
-    console.log(isChecked);
+   
 
     this.setState(prevState => ({
-      checkedItems: prevState.checkedItems.set(item, isChecked),
+      checkedItems: prevState.checkedItems.set(itemValue, isChecked),
     }));
   }
 
   render() {
     const { checkedItems } = this.state;
 
+    const { flightSearchConditions, flightConditionChoice } = this.props;
+
     return (
       <ListGroup>
-        {FLIGHT_SEARCH_CONDITIONS.map(item => (
+        {flightSearchConditions.map(item => (
           <ListGroupItem key={item.id}>
             <Checkbox
               id={item.id}
               name={item.name}
               value={item.value}
               label={item.label}
-              checked={checkedItems.get(item.value)}
-              onChange={this.handleCheckboxChange}
+              checked={item.checked}
+              onChange={(event) => {
+                const isChecked = event.target.checked;
+                const itemValue = event.target.value;
+                flightConditionChoice(isChecked, itemValue);
+              }}
             />
           </ListGroupItem>
         ))}
@@ -48,4 +57,17 @@ class CheckboxContainer extends React.Component {
   }
 }
 
-export default CheckboxContainer;
+function mapStateToProps(store) {
+  console.log(store);
+  return {
+    flightSearchConditions: store.flightSearchConditions,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    flightConditionChoice: bindActionCreators(flightConditionChoice, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckboxContainer);
