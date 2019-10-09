@@ -7,7 +7,7 @@ import ListGroupItem from '../../components/list-group/ListGroupItem';
 import RadioButton from '../../components/radio-button/RadioButton';
 import RadioButtonGroup from '../../components/radio-button-group/RadioButtonGroup';
 
-import { chooseCurrency } from '../../reducers/rootReducer';
+import chooseCurrency from '../../actions/chooseCurrency';
 
 class RadioButtonContainer extends React.Component {
   constructor(props) {
@@ -65,7 +65,7 @@ RadioButtonContainer.defaultProps = {
 function mapStateToProps(store) {
   console.log(store);
   return {
-    currency: store.currency,
+    currency: store.currency.currency,
   };
 }
 

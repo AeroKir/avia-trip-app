@@ -5,7 +5,7 @@ import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import Checkbox from '../../components/checkbox/Checkbox';
 
-import { flightConditionChoice } from '../../reducers/rootReducer';
+import flightConditionChoice from '../../actions/chooseFlights';
 
 class CheckboxContainer extends React.Component {
   constructor(props) {
@@ -20,9 +20,7 @@ class CheckboxContainer extends React.Component {
 
   handleCheckboxChange(event) {
     const itemValue = event.target.value;
-    
     const isChecked = event.target.checked;
-   
 
     this.setState(prevState => ({
       checkedItems: prevState.checkedItems.set(itemValue, isChecked),
@@ -30,8 +28,6 @@ class CheckboxContainer extends React.Component {
   }
 
   render() {
-    const { checkedItems } = this.state;
-
     const { flightSearchConditions, flightConditionChoice } = this.props;
 
     return (
@@ -60,7 +56,7 @@ class CheckboxContainer extends React.Component {
 function mapStateToProps(store) {
   console.log(store);
   return {
-    flightSearchConditions: store.flightSearchConditions,
+    flightSearchConditions: store.flightSearchConditions.flightSearchConditions,
   };
 }
 
