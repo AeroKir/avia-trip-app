@@ -1,22 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
-import Button from './components/button/Button';
-import ButtonGroup from './components/button-group/ButtonGroup';
-import Input from './components/input/Input';
-import ListGroup from './components/list-group/ListGroup';
-import ListGroupItem from './components/list-group/ListGroupItem';
 import Icon from './components/icon/Icon';
 import FlightCard from './components/flight-card/FlightCard';
 import Aside from './layout/aside/Aside';
 import Main from './layout/main/Main';
-import InputContainer from './containers/InputContainer';
 import CheckboxContainer from './containers/checkbox-container/CheckboxContainer';
 import RadioButtonContainer from './containers/radiobutton-container/RadioButtonContainer';
-import RadioButton from './components/radio-button/RadioButton';
-import RadioButtonGroup from './components/radio-button-group/RadioButtonGroup';
 import FlightCardContainer from './containers/flight-card-container/FlightCardContainer';
-import showFlights from './reducers/showFlights';
-import store from './store/store';
 
 import './App.css';
 
