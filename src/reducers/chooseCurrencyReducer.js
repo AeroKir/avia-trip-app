@@ -6,7 +6,6 @@ function chooseCurrencyReducer(state = initialState, action) {
     case CHOOSE_CURRENCY:
       const newCurrency = state.currency.map((item) => {
         if (item.value === action.payload) {
-          console.log(item.checked);
           return Object.assign({}, item, { checked: true });
         }
         return Object.assign({}, item, { checked: false });
