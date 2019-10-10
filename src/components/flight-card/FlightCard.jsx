@@ -11,6 +11,7 @@ function FlightCard({
   className,
   src,
   price,
+  currencySymbol,
   origin,
   originName,
   departureTime,
@@ -61,7 +62,7 @@ function FlightCard({
             Купить за
             {' '}
             {price}
-            &#8372;
+            {currencySymbol}
           </span>
         </Button>
       </div>
@@ -98,6 +99,7 @@ FlightCard.propTypes = {
   className: PropTypes.string,
   src: PropTypes.string,
   price: PropTypes.number,
+  currencySymbol: PropTypes.string,
   origin: PropTypes.string,
   originName: PropTypes.string,
   departureTime: PropTypes.string,
@@ -113,6 +115,7 @@ FlightCard.defaultProps = {
   className: '',
   src: '../../icons/turkish-airlines-logo-v1.svg',
   price: 0,
+  currencySymbol: '',
   origin: '',
   originName: '',
   departureTime: '',
