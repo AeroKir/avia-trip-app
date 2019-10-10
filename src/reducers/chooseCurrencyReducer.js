@@ -4,6 +4,7 @@ import initialState from '../store/initialState';
 function chooseCurrencyReducer(state = initialState, action) {
   switch (action.type) {
     case CHOOSE_CURRENCY:
+    {
       const newCurrency = state.currency.map((item) => {
         if (item.value === action.payload) {
           return Object.assign({}, item, { checked: true });
@@ -12,6 +13,7 @@ function chooseCurrencyReducer(state = initialState, action) {
       });
       const newCurrencyState = Object.assign({}, state, { currency: newCurrency });
       return newCurrencyState;
+    }
     default:
       return state;
   }
