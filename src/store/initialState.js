@@ -5,6 +5,7 @@ const initialState = {
       name: 'currency',
       value: 'uah',
       label: 'UAH',
+      currencyHTMLEntitySymbol: '&#8372;',
       checked: true,
     },
     {
@@ -12,6 +13,7 @@ const initialState = {
       name: 'currency',
       value: 'usd',
       label: 'USD',
+      currencyHTMLEntitySymbol: '&#36;',
       checked: false,
     },
     {
@@ -19,6 +21,7 @@ const initialState = {
       name: 'currency',
       value: 'eur',
       label: 'EUR',
+      currencyHTMLEntitySymbol: '&#8364;',
       checked: false,
     },
   ],
