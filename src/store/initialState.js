@@ -13,7 +13,7 @@ const initialState = {
       name: 'currency',
       value: 'usd',
       label: 'USD',
-      currencyUnicodeSymbol: '\uFF04',
+      currencyUnicodeSymbol: '\u0024',
       checked: false,
     },
     {
