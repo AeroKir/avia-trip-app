@@ -62,6 +62,7 @@ const initialState = {
       checked: false,
     },
   ],
+  flightVariants: [],
 };
 
 export default initialState;
