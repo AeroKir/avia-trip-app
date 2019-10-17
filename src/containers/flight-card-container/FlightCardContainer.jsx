@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import FlightCard from '../../components/flight-card/FlightCard';
-import { requestFlightsMock } from '../../actions/requestFlights';
+import Icon from '../../components/icon/Icon';
+import { requestFlightsMock, receiveAirlineLogo, fetchAirlineLogo } from '../../actions/requestFlights';
 
 class FlightCardContainer extends React.Component {
   componentDidMount() {
@@ -14,12 +15,13 @@ class FlightCardContainer extends React.Component {
   }
 
   render() {
-    const { currency } = this.props;
+    const { currency, flightVariants } = this.props;
 
     return (
       <div>
-        {this.props.flightVariants.map(item => (
+        {flightVariants.map(item => (
           <FlightCard
+            src={`https://daisycon.io/images/airline/?width=300&height=150&color=ffffff&iata=${item.carrier}`}
             price={item.price}
             currencySymbol={currency.map(
               i => i.checked && i.currencyUnicodeSymbol
