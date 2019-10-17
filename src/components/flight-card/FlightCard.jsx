@@ -113,7 +113,7 @@ FlightCard.propTypes = {
 
 FlightCard.defaultProps = {
   className: '',
-  src: '../../icons/turkish-airlines-logo-v1.svg',
+  src: 'https://daisycon.io/images/airline/?width=300&height=150&color=ffffff&iata=lh',
   price: 0,
   currencySymbol: '',
   origin: '',
