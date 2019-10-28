@@ -1,4 +1,9 @@
-import { REQUEST_FLIGHTS, RECEIVE_FLIGHTS, RECEIVE_FLIGHTS_MOCK } from '../constants/actionTypes';
+import {
+  REQUEST_FLIGHTS,
+  RECEIVE_FLIGHTS,
+  RECEIVE_FLIGHTS_MOCK,
+  RECEIVE_AIRLINE_LOGO,
+} from '../constants/actionTypes';
 import TICKETS from '../data/tickets-array';
 
 // Action creator for mock data
@@ -12,6 +17,12 @@ export function getFlightsMock(flights) {
 export function requestFlightsMock() {
   return dispatch => dispatch(getFlightsMock(TICKETS));
 }
+
+// export const requestFlightsMock = () => (dispatch) => {
+//   setTimeout(() => {
+//     dispatch(getFlightsMock(TICKETS));
+//   }, 5000);
+// };
 
 export function requestFlights(flights) {
   return {
@@ -31,6 +42,28 @@ export function fetchFlights(url) {
       })
       .then(response => response.json())
       .then(flights => dispatch(requestFlights(flights)))
-      .catch(() => {});
+      .catch(() => { });
+  };
+}
+
+
+export function receiveAirlineLogo(airlineLogo) {
+  return {
+    type: RECEIVE_AIRLINE_LOGO,
+    payload: airlineLogo,
+  };
+}
+
+export function fetchAirlineLogo(url) {
+  return (dispatch) => {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response;
+      })
+      .then(response => dispatch(receiveAirlineLogo(response.url)))
+      .catch(() => { });
   };
 }
