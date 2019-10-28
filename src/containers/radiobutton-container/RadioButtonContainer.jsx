@@ -8,26 +8,27 @@ import RadioButton from '../../components/radio-button/RadioButton';
 import RadioButtonGroup from '../../components/radio-button-group/RadioButtonGroup';
 
 import chooseCurrency from '../../actions/chooseCurrency';
+import {
+  fetchUSDSaleRate, fetchEURSaleRate, convertUAHToUSD, convertUAHToEUR,
+} from '../../actions/convertCurrency';
 
 class RadioButtonContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checked: true,
-    };
-
-    this.handleRadioSelectChange = this.handleRadioSelectChange.bind(this);
-  }
-
-  handleRadioSelectChange(event) {
-    this.setState({
-      checked: event.target.value,
-    });
+  componentDidMount() {
+    // const { convertPrice } = this.props;
+    // convertPrice('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11');
   }
 
   render() {
-    const { currency, chooseCurrency } = this.props;
+    const {
+      currency,
+      chooseCurrency,
+      // convertCurrency,
+      convertPriceToUSD,
+      convertPriceToEUR,
+      flightVariants,
+      convertUAHToUSD,
+      convertUAHToEUR,
+    } = this.props;
 
     return (
       <RadioButtonGroup>
@@ -43,6 +44,8 @@ class RadioButtonContainer extends React.Component {
                 checked={item.checked}
                 onChange={(event) => {
                   chooseCurrency(event.target.value);
+                  convertUAHToUSD(25, event.target.value);
+                  convertUAHToEUR(28, event.target.value);
                 }}
                 simpleButtonView
               />
@@ -66,12 +69,17 @@ function mapStateToProps(store) {
   console.log(store);
   return {
     currency: store.currency.currency,
+    flightVariants: store.flightVariants.flightVariants,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     chooseCurrency: bindActionCreators(chooseCurrency, dispatch),
+    // convertPriceToUSD: url => dispatch(fetchUSDSaleRate(url)),
+    // convertPriceToEUR: url => dispatch(fetchEURSaleRate(url)),
+    convertUAHToUSD: (price, value) => dispatch(convertUAHToUSD(price, value)),
+    convertUAHToEUR: (price, value) => dispatch(convertUAHToEUR(price, value)),
   };
 }
 
