@@ -5,17 +5,12 @@ import FlightCard from './components/flight-card/FlightCard';
 import Aside from './layout/aside/Aside';
 import Main from './layout/main/Main';
 import CheckboxContainer from './containers/checkbox-container/CheckboxContainer';
-import RadioButtonContainer from './containers/radiobutton-container/RadioButtonContainer';
+import CurrencyBlockContainer from './containers/currency-block-container/CurrencyBlockContainer';
 import FlightCardContainer from './containers/flight-card-container/FlightCardContainer';
 
 import './App.css';
 
 import iconLogo from './icons/globe.svg';
-import airlineTurkishLogo from './icons/turkish-airlines-logo-v1.svg';
-import airlineLufthansaLogo from './icons/lufthansa-logo.svg';
-import airlineElAlLogo from './icons/Logo_of_El_Al_Israel_Airlines.svg';
-import airlineAirFranceLogo from './icons/Air_France_Logo.svg';
-import airlineRyanairLogo from './icons/Ryanair.svg';
 
 function App() {
   return (
@@ -29,7 +24,7 @@ function App() {
         <Aside>
           <fieldset className="currency-select-field">
             <legend>Валюта</legend>
-            <RadioButtonContainer />
+            <CurrencyBlockContainer />
           </fieldset>
           <fieldset className="transfer-select-field check-transfer-list">
             <legend>Количество пересадок</legend>
