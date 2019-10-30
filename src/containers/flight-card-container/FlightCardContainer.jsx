@@ -23,7 +23,7 @@ class FlightCardContainer extends React.Component {
     if (prevProps.flightVariants !== flightVariants) {
       flightVariants.map(
         (i) => {
-          console.log(i.price / 25);
+          console.log(i.price);
           return i.price;
         },
       );
@@ -41,26 +41,28 @@ class FlightCardContainer extends React.Component {
     const airlineLogoBgColor = 'ffffff';
 
     return (
-      <div>
+      <ListGroup>
         {flightVariants.map(item => (
-          <FlightCard
-            src={`${airlineLogoUrl}?width=${airlineLogoWidth}&height=${airlineLogoHeight}&color=${airlineLogoBgColor}&iata=${item.carrier}`}
-            price={item.price}
-            currencySymbol={currency.map(
-              i => i.checked && i.currencyUnicodeSymbol,
-            )}
-            origin={item.origin}
-            originName={item.origin_name}
-            departureTime={item.departure_time}
-            departureDate={item.departure_date}
-            stops={item.stops}
-            arrivalTime={item.arrival_time}
-            arrivalDate={item.arrival_date}
-            destination={item.destination}
-            destinationName={item.destination_name}
-          />
+          <ListGroupItem>
+            <FlightCard
+              src={`${airlineLogoUrl}?width=${airlineLogoWidth}&height=${airlineLogoHeight}&color=${airlineLogoBgColor}&iata=${item.carrier}`}
+              price={item.price}
+              currencySymbol={currency.map(
+                i => i.checked && i.currencyUnicodeSymbol,
+              )}
+              origin={item.origin}
+              originName={item.origin_name}
+              departureTime={item.departure_time}
+              departureDate={item.departure_date}
+              stops={item.stops}
+              arrivalTime={item.arrival_time}
+              arrivalDate={item.arrival_date}
+              destination={item.destination}
+              destinationName={item.destination_name}
+            />
+          </ListGroupItem>
         ))}
-      </div>
+      </ListGroup>
     );
   }
 }
