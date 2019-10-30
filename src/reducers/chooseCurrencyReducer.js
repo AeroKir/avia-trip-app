@@ -1,9 +1,6 @@
 import { CHOOSE_CURRENCY, CONVERT_UAH_TO_USD, CONVERT_UAH_TO_EUR } from '../constants/actionTypes';
 import initialState from '../store/initialState';
 
-// const initialPrice = initialState.flightVariants.map(item => item.price);
-// const initialStateFlights = initialState.flightVariants;
-
 function chooseCurrencyReducer(state = initialState, action) {
   switch (action.type) {
     case CHOOSE_CURRENCY:
@@ -26,7 +23,7 @@ function chooseCurrencyReducer(state = initialState, action) {
           return initialState.flightVariants.map(flight => Object.assign(
             {},
             flight,
-            { price: flight.price / action.payload.UAHPerUSD },
+            { price: Math.round(flight.price / action.payload.UAHPerUSD) },
           ));
         }
         return initialState.flightVariants;
@@ -42,7 +39,7 @@ function chooseCurrencyReducer(state = initialState, action) {
           return initialState.flightVariants.map(flight => Object.assign(
             {},
             flight,
-            { price: flight.price / action.payload.UAHPerEUR },
+            { price: Math.round(flight.price / action.payload.UAHPerEUR) },
           ));
         }
         return state.flightVariants.map(flight => Object.assign(
