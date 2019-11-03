@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/aviasearch/static/css/main.33136961.chunk.css",
+    "main.js": "/aviasearch/static/js/main.6b6c4892.chunk.js",
+    "main.js.map": "/aviasearch/static/js/main.6b6c4892.chunk.js.map",
+    "runtime~main.js": "/aviasearch/static/js/runtime~main.a780f039.js",
+    "runtime~main.js.map": "/aviasearch/static/js/runtime~main.a780f039.js.map",
+    "static/js/2.b341d5b3.chunk.js": "/aviasearch/static/js/2.b341d5b3.chunk.js",
+    "static/js/2.b341d5b3.chunk.js.map": "/aviasearch/static/js/2.b341d5b3.chunk.js.map",
+    "index.html": "/aviasearch/index.html",
+    "precache-manifest.39826f231fdf2940fb048459b1878ab0.js": "/aviasearch/precache-manifest.39826f231fdf2940fb048459b1878ab0.js",
+    "service-worker.js": "/aviasearch/service-worker.js",
+    "static/css/main.33136961.chunk.css.map": "/aviasearch/static/css/main.33136961.chunk.css.map",
+    "static/media/Checkbox.css": "/aviasearch/static/media/check-arrow.b9c49c69.svg",
+    "static/media/globe.svg": "/aviasearch/static/media/globe.951e1682.svg",
+    "static/media/logo.svg": "/aviasearch/static/media/logo.5d5d9eef.svg",
+    "static/media/FlightCard.css": "/aviasearch/static/media/plane-gray.e78481ea.svg",
+    "static/media/RadioButton.css": "/aviasearch/static/media/radio-check-dot.1738e37a.svg"
+  }
+}
