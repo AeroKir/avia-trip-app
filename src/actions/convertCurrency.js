@@ -14,10 +14,9 @@ export function convertUAHToEUR(UAHPerEUR, value) {
   };
 }
 
-export function fetchUSDSaleRate(url) {
+export function fetchUSDSaleRate(url, checkedCurrency) {
   return (dispatch) => {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    fetch(proxyUrl + url)
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
@@ -27,6 +26,7 @@ export function fetchUSDSaleRate(url) {
       .then(response => response.json())
       .then((currencyData) => {
         const currencySale = currencyData.map((currency) => {
+          // See more details on this 'ccy' meaning: https://api.privatbank.ua/#p24/exchange
           if (currency.ccy === 'USD') {
             return Number(currency.sale);
           }
@@ -36,17 +36,16 @@ export function fetchUSDSaleRate(url) {
       })
       .then((currencySale) => {
         const USDSaleRate = currencySale[0];
-        dispatch(convertUAHToUSD(USDSaleRate));
+        dispatch(convertUAHToUSD(USDSaleRate, checkedCurrency));
       })
       .catch(() => { });
   };
 }
 
 
-export function fetchEURSaleRate(url) {
+export function fetchEURSaleRate(url, checkedCurrency) {
   return (dispatch) => {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    fetch(proxyUrl + url)
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
@@ -56,6 +55,7 @@ export function fetchEURSaleRate(url) {
       .then(response => response.json())
       .then((currencyData) => {
         const currencySale = currencyData.map((currency) => {
+          // See more details on this 'ccy' meaning: https://api.privatbank.ua/#p24/exchange
           if (currency.ccy === 'EUR') {
             return Number(currency.sale);
           }
@@ -65,7 +65,7 @@ export function fetchEURSaleRate(url) {
       })
       .then((currencySale) => {
         const EURSaleRate = currencySale[1];
-        dispatch(convertUAHToEUR(EURSaleRate));
+        dispatch(convertUAHToEUR(EURSaleRate, checkedCurrency));
       })
       .catch(() => { });
   };
