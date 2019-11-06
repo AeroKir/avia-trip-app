@@ -64,9 +64,9 @@ CurrencyBlockContainer.defaultProps = {
   convertPriceToEUR: () => { },
 };
 
-function mapStateToProps(store) {
+function mapStateToProps({ currency }) {
   return {
-    currency: store.currency.currency,
+    currency: currency.currency,
   };
 }
 
