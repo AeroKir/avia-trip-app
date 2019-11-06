@@ -54,7 +54,6 @@ class CheckboxContainer extends React.Component {
 }
 
 function mapStateToProps(store) {
-  console.log(store);
   return {
     flightSearchConditions: store.flightSearchConditions.flightSearchConditions,
   };
