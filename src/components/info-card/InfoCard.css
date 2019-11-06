@@ -1,0 +1,27 @@
+.info-card {
+  display: flex;
+  height: 150px;
+  margin-left: 22px;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.info-card-aside {
+  width: 100px;
+  padding: 20px 20px;
+}
+
+.info-card-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 467px;
+  padding: 20px 20px;
+}
+
+.info-card-heading {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
