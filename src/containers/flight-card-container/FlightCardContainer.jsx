@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import FlightCard from '../../components/flight-card/FlightCard';
+import InfoCard from '../../components/info-card/InfoCard';
 import Icon from '../../components/icon/Icon';
-import { requestFlightsMock, receiveAirlineLogo, fetchAirlineLogo } from '../../actions/requestFlights';
-import { fetchUSDSaleRate, fetchEURSaleRate, convertUAHToUSD } from '../../actions/convertCurrency';
-import chooseCurrency from '../../actions/chooseCurrency';
+import { requestFlightsMock } from '../../actions/requestFlights';
+
+import infoIcon from '../../icons/info-icon.svg';
 
 class FlightCardContainer extends React.Component {
   // componentDidMount() {
@@ -32,13 +32,24 @@ class FlightCardContainer extends React.Component {
 
   render() {
     const {
-      currency, flightVariants,
+      currency, flightSearchConditions, flightVariants,
     } = this.props;
 
     const airlineLogoUrl = 'https://daisycon.io/images/airline/';
     const airlineLogoWidth = '300';
     const airlineLogoHeight = '150';
     const airlineLogoBgColor = 'ffffff';
+
+    const notCheckedFlights = flightSearchConditions.filter(item => !item.checked);
+
+    if (notCheckedFlights.length === flightSearchConditions.length || flightVariants.length === 0) {
+      return (
+        <InfoCard
+          src={infoIcon}
+          flightsQuantity={flightVariants.length}
+        />
+      );
+    }
 
     return (
       <ListGroup>
@@ -67,22 +78,29 @@ class FlightCardContainer extends React.Component {
   }
 }
 
-function mapStateToProps(store) {
-  console.log(store);
+FlightCardContainer.propTypes = {
+  currency: PropTypes.arrayOf(PropTypes.object),
+  flightSearchConditions: PropTypes.arrayOf(PropTypes.object),
+  flightVariants: PropTypes.arrayOf(PropTypes.object),
+};
+
+FlightCardContainer.defaultProps = {
+  currency: [],
+  flightSearchConditions: [],
+  flightVariants: [],
+};
+
+function mapStateToProps({ currency, flightSearchConditions, flightVariants }) {
   return {
-    currency: store.currency.currency,
-    flightSearchConditions: store.flightSearchConditions.flightSearchConditions,
-    flightVariants: store.flightVariants.flightVariants,
+    currency: currency.currency,
+    flightSearchConditions: flightSearchConditions.flightSearchConditions,
+    flightVariants: flightVariants.flightVariants,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    chooseCurrency: bindActionCreators(chooseCurrency, dispatch),
     fetchData: () => dispatch(requestFlightsMock()),
-    // convertPriceToUSD: url => dispatch(fetchUSDSaleRate(url)),
-    // convertPriceToEUR: url => dispatch(fetchEURSaleRate(url)),
-    // convertUAHToUSD: price => dispatch(convertUAHToUSD(price)),
   };
 }
 
