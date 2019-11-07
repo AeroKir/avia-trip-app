@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0d091d75f64dd6808c636c52b62a8bad",
+    "revision": "026be392f3440df1df95dc082c0b8649",
     "url": "/avia-trip-app/index.html"
   },
   {
-    "revision": "2d88c8ad3d47644bea76",
-    "url": "/avia-trip-app/static/css/main.7efd099b.chunk.css"
+    "revision": "290384d2e3d69f4a09e1",
+    "url": "/avia-trip-app/static/css/main.053cf4ec.chunk.css"
   },
   {
-    "revision": "16ffe9d87cb1ecf28f32",
-    "url": "/avia-trip-app/static/js/2.b341d5b3.chunk.js"
+    "revision": "daee2781aacfad37659a",
+    "url": "/avia-trip-app/static/js/2.f3b39fef.chunk.js"
   },
   {
-    "revision": "2d88c8ad3d47644bea76",
-    "url": "/avia-trip-app/static/js/main.483e066c.chunk.js"
+    "revision": "290384d2e3d69f4a09e1",
+    "url": "/avia-trip-app/static/js/main.187fff06.chunk.js"
   },
   {
     "revision": "17651446d69e53989c72",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "951e168287fc41f8e29f790be634bbd8",
     "url": "/avia-trip-app/static/media/globe.951e1682.svg"
+  },
+  {
+    "revision": "81a21cfbe443152caf78ea312e508b22",
+    "url": "/avia-trip-app/static/media/info-icon.81a21cfb.svg"
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
