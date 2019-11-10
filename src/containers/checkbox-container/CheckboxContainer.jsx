@@ -10,25 +10,19 @@ import flightConditionChoice from '../../actions/chooseFlights';
 class CheckboxContainer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      checkedItems: new Map(),
-    };
-
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    this.handleFlightConditionsChange = this.handleFlightConditionsChange.bind(this);
   }
 
-  handleCheckboxChange(event) {
-    const itemValue = event.target.value;
+  handleFlightConditionsChange(event) {
+    const { flightConditionFilter } = this.props;
     const isChecked = event.target.checked;
+    const itemValue = event.target.value;
 
-    this.setState(prevState => ({
-      checkedItems: prevState.checkedItems.set(itemValue, isChecked),
-    }));
+    flightConditionFilter(isChecked, itemValue);
   }
 
   render() {
-    const { flightSearchConditions, flightConditionChoice } = this.props;
+    const { flightSearchConditions } = this.props;
 
     return (
       <ListGroup>
@@ -40,11 +34,7 @@ class CheckboxContainer extends React.Component {
               value={item.value}
               label={item.label}
               checked={item.checked}
-              onChange={(event) => {
-                const isChecked = event.target.checked;
-                const itemValue = event.target.value;
-                flightConditionChoice(isChecked, itemValue);
-              }}
+              onChange={this.handleFlightConditionsChange}
             />
           </ListGroupItem>
         ))}
@@ -61,7 +51,7 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    flightConditionChoice: bindActionCreators(flightConditionChoice, dispatch),
+    flightConditionFilter: bindActionCreators(flightConditionChoice, dispatch),
   };
 }
 
