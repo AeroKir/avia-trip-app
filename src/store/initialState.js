@@ -39,6 +39,7 @@ const initialState = {
       value: 'transfer-none',
       label: 'Без пересадок',
       checked: true,
+      stops: 0,
     },
     {
       id: 'input-transfer-one',
@@ -46,6 +47,7 @@ const initialState = {
       value: 'transfer-one',
       label: '1 пересадка',
       checked: true,
+      stops: 1,
     },
     {
       id: 'input-transfer-two',
@@ -53,6 +55,7 @@ const initialState = {
       value: 'transfer-two',
       label: '2 пересадки',
       checked: true,
+      stops: 2,
     },
     {
       id: 'input-transfer-three',
@@ -60,6 +63,7 @@ const initialState = {
       value: 'transfer-three',
       label: '3 пересадки',
       checked: true,
+      stops: 3,
     },
   ],
   flightVariants: [
@@ -75,7 +79,8 @@ const initialState = {
       carrier: 'TK',
       stops: 3,
       price: 12400,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -87,7 +92,8 @@ const initialState = {
       carrier: 'LH',
       stops: 1,
       price: 13100,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -99,7 +105,8 @@ const initialState = {
       carrier: 'EI',
       stops: 0,
       price: 15300,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -111,7 +118,8 @@ const initialState = {
       carrier: 'TK',
       stops: 2,
       price: 11000,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -123,7 +131,8 @@ const initialState = {
       carrier: 'BA',
       stops: 3,
       price: 13400,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -135,7 +144,8 @@ const initialState = {
       carrier: 'LY',
       stops: 3,
       price: 12450,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -147,7 +157,8 @@ const initialState = {
       carrier: 'TK',
       stops: 1,
       price: 13600,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -159,7 +170,8 @@ const initialState = {
       carrier: 'TK',
       stops: 0,
       price: 14250,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
@@ -171,7 +183,8 @@ const initialState = {
       carrier: 'FR',
       stops: 1,
       price: 16700,
-    }, {
+    },
+    {
       origin: 'VVO',
       origin_name: 'Владивосток',
       destination: 'TLV',
