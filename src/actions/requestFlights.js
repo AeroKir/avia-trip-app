@@ -1,6 +1,5 @@
 import {
   REQUEST_FLIGHTS,
-  RECEIVE_FLIGHTS,
   RECEIVE_FLIGHTS_MOCK,
   RECEIVE_AIRLINE_LOGO,
 } from '../constants/actionTypes';
