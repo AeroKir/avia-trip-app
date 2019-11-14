@@ -5,7 +5,6 @@ import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import FlightCard from '../../components/flight-card/FlightCard';
 import InfoCard from '../../components/info-card/InfoCard';
-import Icon from '../../components/icon/Icon';
 import { requestFlightsMock } from '../../actions/requestFlights';
 
 import infoIcon from '../../icons/info-icon.svg';
@@ -67,12 +66,14 @@ class FlightCardContainer extends React.Component {
 }
 
 FlightCardContainer.propTypes = {
+  fetchData: PropTypes.func,
   currency: PropTypes.arrayOf(PropTypes.object),
   flightSearchConditions: PropTypes.arrayOf(PropTypes.object),
   flightVariants: PropTypes.arrayOf(PropTypes.object),
 };
 
 FlightCardContainer.defaultProps = {
+  fetchData: () => { },
   currency: [],
   flightSearchConditions: [],
   flightVariants: [],
