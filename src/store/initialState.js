@@ -32,6 +32,7 @@ const initialState = {
       value: 'transfer-all',
       label: 'Все',
       checked: true,
+      stops: 'all',
     },
     {
       id: 'input-transfer-none',
