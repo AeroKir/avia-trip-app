@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import Icon from './components/icon/Icon';
-import FlightCard from './components/flight-card/FlightCard';
 import Aside from './layout/aside/Aside';
 import Main from './layout/main/Main';
 import FlightStopsFilterContainer from './containers/filters-container/FlightStopsFilterContainer';
