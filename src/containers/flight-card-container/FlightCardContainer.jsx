@@ -11,23 +11,9 @@ import { requestFlightsMock } from '../../actions/requestFlights';
 import infoIcon from '../../icons/info-icon.svg';
 
 class FlightCardContainer extends React.Component {
-  // componentDidMount() {
-  //   const { fetchData, convertPriceToUSD, convertPriceToEUR } = this.props;
-  //   fetchData();
-  //   convertPriceToUSD('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11');
-  //   convertPriceToEUR('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11');
-  // }
-
-  componentDidUpdate(prevProps) {
-    const { flightVariants } = this.props;
-    if (prevProps.flightVariants !== flightVariants) {
-      flightVariants.map(
-        (i) => {
-          console.log(i.price);
-          return i.price;
-        },
-      );
-    }
+  componentDidMount() {
+    const { fetchData } = this.props;
+    fetchData();
   }
 
   render() {
@@ -39,6 +25,8 @@ class FlightCardContainer extends React.Component {
     const airlineLogoWidth = '300';
     const airlineLogoHeight = '150';
     const airlineLogoBgColor = 'ffffff';
+
+    const ticketsList = flightVariants.filter(ticket => flightSearchConditions.some(item => ticket.stops === item.stops && item.checked));
 
     const notCheckedFlights = flightSearchConditions.filter(item => !item.checked);
 
@@ -53,7 +41,7 @@ class FlightCardContainer extends React.Component {
 
     return (
       <ListGroup>
-        {flightVariants.map(item => (
+        {ticketsList.map(item => (
           <ListGroupItem>
             <FlightCard
               src={`${airlineLogoUrl}?width=${airlineLogoWidth}&height=${airlineLogoHeight}&color=${airlineLogoBgColor}&iata=${item.carrier}`}
