@@ -4,7 +4,7 @@ import Icon from './components/icon/Icon';
 import FlightCard from './components/flight-card/FlightCard';
 import Aside from './layout/aside/Aside';
 import Main from './layout/main/Main';
-import CheckboxContainer from './containers/checkbox-container/CheckboxContainer';
+import FlightStopsFilterContainer from './containers/filters-container/FlightStopsFilterContainer';
 import CurrencyBlockContainer from './containers/currency-block-container/CurrencyBlockContainer';
 import FlightCardContainer from './containers/flight-card-container/FlightCardContainer';
 
@@ -28,7 +28,7 @@ function App() {
           </fieldset>
           <fieldset className="transfer-select-field check-transfer-list">
             <legend>Количество пересадок</legend>
-            <CheckboxContainer />
+            <FlightStopsFilterContainer />
           </fieldset>
         </Aside>
         <Main>
