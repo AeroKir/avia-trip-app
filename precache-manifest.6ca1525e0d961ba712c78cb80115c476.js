@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "740eeb25ff92a6fea6e8d98f147d06a3",
+    "revision": "a3a2775734b31eb26f746e9e5cdade23",
     "url": "/avia-trip-app/index.html"
   },
   {
-    "revision": "e205f96d9baf465b2ffe",
-    "url": "/avia-trip-app/static/css/main.1e00e105.chunk.css"
+    "revision": "dbc31499af75819ec2a1",
+    "url": "/avia-trip-app/static/css/main.f3846cee.chunk.css"
   },
   {
     "revision": "05eca55da3b5d354b3b0",
     "url": "/avia-trip-app/static/js/2.c7517a63.chunk.js"
   },
   {
-    "revision": "e205f96d9baf465b2ffe",
-    "url": "/avia-trip-app/static/js/main.f2d05a94.chunk.js"
+    "revision": "dbc31499af75819ec2a1",
+    "url": "/avia-trip-app/static/js/main.563e10db.chunk.js"
   },
   {
     "revision": "17651446d69e53989c72",
