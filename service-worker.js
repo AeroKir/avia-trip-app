@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/avia-trip-app/precache-manifest.6ca1525e0d961ba712c78cb80115c476.js"
+  "/avia-trip-app/precache-manifest.774559fb7d164da2115c9c226e316312.js"
 );
 
 self.addEventListener('message', (event) => {

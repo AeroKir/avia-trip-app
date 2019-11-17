@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/avia-trip-app/static/css/main.f3846cee.chunk.css",
+    "main.css": "/avia-trip-app/static/css/main.4f82cba4.chunk.css",
     "main.js": "/avia-trip-app/static/js/main.563e10db.chunk.js",
     "main.js.map": "/avia-trip-app/static/js/main.563e10db.chunk.js.map",
     "runtime~main.js": "/avia-trip-app/static/js/runtime~main.adfdfd23.js",
@@ -8,9 +8,9 @@
     "static/js/2.c7517a63.chunk.js": "/avia-trip-app/static/js/2.c7517a63.chunk.js",
     "static/js/2.c7517a63.chunk.js.map": "/avia-trip-app/static/js/2.c7517a63.chunk.js.map",
     "index.html": "/avia-trip-app/index.html",
-    "precache-manifest.6ca1525e0d961ba712c78cb80115c476.js": "/avia-trip-app/precache-manifest.6ca1525e0d961ba712c78cb80115c476.js",
+    "precache-manifest.774559fb7d164da2115c9c226e316312.js": "/avia-trip-app/precache-manifest.774559fb7d164da2115c9c226e316312.js",
     "service-worker.js": "/avia-trip-app/service-worker.js",
-    "static/css/main.f3846cee.chunk.css.map": "/avia-trip-app/static/css/main.f3846cee.chunk.css.map",
+    "static/css/main.4f82cba4.chunk.css.map": "/avia-trip-app/static/css/main.4f82cba4.chunk.css.map",
     "static/media/Checkbox.css": "/avia-trip-app/static/media/check-arrow.b9c49c69.svg",
     "static/media/globe.svg": "/avia-trip-app/static/media/globe.951e1682.svg",
     "static/media/info-icon.svg": "/avia-trip-app/static/media/info-icon.81a21cfb.svg",
