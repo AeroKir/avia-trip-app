@@ -35,3 +35,15 @@ body {
 .check-transfer-list {
   margin-left: 20px;
 }
+
+.transfer-filter-legend {
+  margin-left: -18px;
+}
+
+/* .flight-stops-filter-item {
+  width: 100%;
+}
+
+.flight-stops-filter-item:hover {
+  background-color: #f1fcff;
+} */
