@@ -25,7 +25,7 @@ function App() {
             <CurrencyBlockContainer />
           </fieldset>
           <fieldset className="transfer-select-field check-transfer-list">
-            <legend>Количество пересадок</legend>
+            <legend className="transfer-filter-legend">Количество пересадок</legend>
             <FlightStopsFilterContainer />
           </fieldset>
         </Aside>
