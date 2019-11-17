@@ -27,7 +27,7 @@ class FlightStopsFilterContainer extends React.Component {
     return (
       <ListGroup>
         {flightSearchConditions.map(item => (
-          <ListGroupItem key={item.id}>
+          <ListGroupItem key={item.id} className="flight-stops-filter-item">
             <Checkbox
               id={item.id}
               name={item.name}
