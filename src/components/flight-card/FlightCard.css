@@ -21,12 +21,11 @@
   width: 120px;
   height: auto;
   margin-left: calc(100% / 6);
-  padding-bottom: 25px;
 }
 
 .flight-card-buy-btn {
   background-color: #f16b26;
-  color: #fef2ea;
+  color: #ffffff;
   width: 161px;
   height: 57px;
   border-radius: 7px;
@@ -34,7 +33,6 @@
 
 .flight-card-buy-btn:hover {
   background-color: #f37f27;
-  color: #e4e4e4;
 }
 
 .flight-card-main {
