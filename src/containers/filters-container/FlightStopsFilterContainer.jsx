@@ -5,12 +5,18 @@ import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import Checkbox from '../../components/checkbox/Checkbox';
 
+import { requestFlightsMock } from '../../actions/requestFlights';
 import flightConditionChoice from '../../actions/chooseFlights';
 
 class FlightStopsFilterContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleFlightStopsChange = this.handleFlightStopsChange.bind(this);
+  }
+
+  componentDidMount() {
+    const { fetchData } = this.props;
+    fetchData();
   }
 
   handleFlightStopsChange(event) {
@@ -44,11 +50,13 @@ class FlightStopsFilterContainer extends React.Component {
 }
 
 FlightStopsFilterContainer.propTypes = {
+  fetchData: PropTypes.func,
   flightSearchConditions: PropTypes.arrayOf(PropTypes.object),
   flightStopsFilter: PropTypes.func,
 };
 
 FlightStopsFilterContainer.defaultProps = {
+  fetchData: () => { },
   flightSearchConditions: [],
   flightStopsFilter: () => { },
 };
@@ -61,6 +69,7 @@ function mapStateToProps({ flightSearchConditions }) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    fetchData: () => dispatch(requestFlightsMock()),
     flightStopsFilter: (checked, value) => dispatch(flightConditionChoice(checked, value)),
   };
 }
