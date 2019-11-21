@@ -13,15 +13,15 @@ export function getFlightsMock(flights) {
   };
 }
 
-export function requestFlightsMock() {
-  return dispatch => dispatch(getFlightsMock(TICKETS));
-}
+// export function requestFlightsMock() {
+//   return dispatch => dispatch(getFlightsMock(TICKETS));
+// }
 
-// export const requestFlightsMock = () => (dispatch) => {
-//   setTimeout(() => {
-//     dispatch(getFlightsMock(TICKETS));
-//   }, 5000);
-// };
+export const requestFlightsMock = () => (dispatch) => {
+  setTimeout(() => {
+    dispatch(getFlightsMock(TICKETS));
+  }, 5000);
+};
 
 export function requestFlights(flights) {
   return {
