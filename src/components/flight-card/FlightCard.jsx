@@ -99,7 +99,10 @@ FlightCard.propTypes = {
   className: PropTypes.string,
   src: PropTypes.string,
   price: PropTypes.number,
-  currencySymbol: PropTypes.string,
+  currencySymbol: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
   origin: PropTypes.string,
   originName: PropTypes.string,
   departureTime: PropTypes.string,
