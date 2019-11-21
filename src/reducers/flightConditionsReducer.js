@@ -1,8 +1,63 @@
-import { FLIGHT_CONDITION_CHOICE } from '../constants/actionTypes';
+import { RECEIVE_FLIGHTS_MOCK, FLIGHT_CONDITION_CHOICE } from '../constants/actionTypes';
 import initialState from '../store/initialState';
 
 function flightConditionsReducer(state = initialState, action) {
   switch (action.type) {
+    case RECEIVE_FLIGHTS_MOCK:
+    {
+      const tickets = action.payload;
+      const stopsQuantityList = tickets.map(ticket => ticket.stops);
+      const isAllStopsQuantityEqual = stopsQuantityList.every(val => val === stopsQuantityList[0]);
+      const maxQuantity = Math.max(...stopsQuantityList);
+      const minQuantity = Math.min(...stopsQuantityList);
+
+      const createStopsFilter = (stopsQuantity) => {
+        let flightStopsFilter;
+        if (isAllStopsQuantityEqual || stopsQuantityList.length === 1) {
+          flightStopsFilter = [];
+        } else {
+          flightStopsFilter = [
+            {
+              id: 'input-transfer-all',
+              name: 'transfer',
+              value: 'transfer-all',
+              label: 'Все',
+              checked: true,
+              stops: 'all',
+            },
+          ];
+        }
+
+        for (let i = minQuantity; i <= stopsQuantity; i += 1) {
+          let stopLabelInRussian;
+          if (i === 0) {
+            stopLabelInRussian = 'Без пересадок';
+          }
+          if (i === 1) {
+            stopLabelInRussian = `${i} пересадка`;
+          }
+          if (i >= 2 && i <= 4) {
+            stopLabelInRussian = `${i} пересадки`;
+          }
+          if (i > 4) {
+            stopLabelInRussian = `${i} пересадок`;
+          }
+          flightStopsFilter.push({
+            id: `input-transfer_${i}`,
+            name: 'transfer',
+            value: `transfer_${i}`,
+            label: `${stopLabelInRussian}`,
+            checked: true,
+            stops: i,
+          });
+        }
+
+        return flightStopsFilter;
+      };
+
+      return Object.assign({}, state, { flightSearchConditions: createStopsFilter(maxQuantity) });
+    }
+
     case FLIGHT_CONDITION_CHOICE:
     {
       const newFligtCondition = state.flightSearchConditions.map((item) => {
@@ -61,6 +116,7 @@ function flightConditionsReducer(state = initialState, action) {
       );
       return newFlightConditionState;
     }
+
     default:
       return state;
   }
