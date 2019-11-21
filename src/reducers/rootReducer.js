@@ -7,7 +7,7 @@ import convertCurrencyReducer from './convertCurrencyReducer';
 const rootReducer = combineReducers({
   currency: chooseCurrencyReducer,
   flightSearchConditions: flightConditionsReducer,
-  flightVariants: chooseCurrencyReducer,
+  flightVariants: requestFlightsReducer,
 });
 
 export default rootReducer;
