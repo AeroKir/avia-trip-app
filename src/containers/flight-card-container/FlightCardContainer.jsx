@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import uuidv1 from 'uuid/v1';
+import Preloader from '../../components/preloader/Preloader';
 import ListGroup from '../../components/list-group/ListGroup';
 import ListGroupItem from '../../components/list-group/ListGroupItem';
 import FlightCard from '../../components/flight-card/FlightCard';
 import InfoCard from '../../components/info-card/InfoCard';
+
 import { requestFlightsMock } from '../../actions/requestFlights';
 
 import infoIcon from '../../icons/info-icon.svg';
@@ -17,7 +20,7 @@ class FlightCardContainer extends React.Component {
 
   render() {
     const {
-      currency, flightSearchConditions, flightVariants,
+      currency, flightSearchConditions, flightVariants, isFlightVariantsReceived,
     } = this.props;
 
     const airlineLogoUrl = 'https://daisycon.io/images/airline/';
@@ -28,6 +31,12 @@ class FlightCardContainer extends React.Component {
     const ticketsList = flightVariants.filter(ticket => flightSearchConditions.some(item => ticket.stops === item.stops && item.checked));
 
     const notCheckedFlights = flightSearchConditions.filter(item => !item.checked);
+
+    if (!isFlightVariantsReceived) {
+      return (
+        <Preloader />
+      );
+    }
 
     if (notCheckedFlights.length === flightSearchConditions.length || flightVariants.length === 0) {
       return (
@@ -41,7 +50,7 @@ class FlightCardContainer extends React.Component {
     return (
       <ListGroup>
         {ticketsList.map(item => (
-          <ListGroupItem>
+          <ListGroupItem key={uuidv1()}>
             <FlightCard
               src={`${airlineLogoUrl}?width=${airlineLogoWidth}&height=${airlineLogoHeight}&color=${airlineLogoBgColor}&iata=${item.carrier}`}
               price={item.price}
@@ -70,6 +79,7 @@ FlightCardContainer.propTypes = {
   currency: PropTypes.arrayOf(PropTypes.object),
   flightSearchConditions: PropTypes.arrayOf(PropTypes.object),
   flightVariants: PropTypes.arrayOf(PropTypes.object),
+  isFlightVariantsReceived: PropTypes.bool,
 };
 
 FlightCardContainer.defaultProps = {
@@ -77,13 +87,15 @@ FlightCardContainer.defaultProps = {
   currency: [],
   flightSearchConditions: [],
   flightVariants: [],
+  isFlightVariantsReceived: false,
 };
 
 function mapStateToProps({ currency, flightSearchConditions, flightVariants }) {
   return {
     currency: currency.currency,
     flightSearchConditions: flightSearchConditions.flightSearchConditions,
-    flightVariants: flightVariants.flightVariants,
+    flightVariants: flightVariants.flights,
+    isFlightVariantsReceived: flightVariants.isReceived,
   };
 }
 
