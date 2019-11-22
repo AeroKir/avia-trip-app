@@ -1,18 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import CurrencyBlockContainer from '../../containers/currency-block-container/CurrencyBlockContainer';
+import FlightStopsFilterContainer from '../../containers/filters-container/FlightStopsFilterContainer';
 
 import './Aside.css';
 
-function Aside({ children }) {
+function Aside() {
   return (
     <aside className="layout-aside">
-      {children}
+      <fieldset className="currency-select-field">
+        <legend>Валюта</legend>
+        <CurrencyBlockContainer />
+      </fieldset>
+      <fieldset className="transfer-select-field check-transfer-list">
+        <legend className="transfer-filter-legend">Количество пересадок</legend>
+        <FlightStopsFilterContainer />
+      </fieldset>
     </aside>
   );
 }
-
-Aside.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Aside;

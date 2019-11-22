@@ -6,3 +6,19 @@
   border-radius: 5px;
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
+
+.currency-select-field {
+  margin-bottom: 30px;
+}
+
+.currency-select {
+  color: red;
+}
+
+.check-transfer-list {
+  margin-left: 20px;
+}
+
+.transfer-filter-legend {
+  margin-left: -18px;
+}
