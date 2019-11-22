@@ -1,0 +1,23 @@
+body {
+  background-color: #f3f7fa;
+  color: #494949;
+  font-size: 14px;
+}
+
+.app-wrapper {
+  background-color: #f3f7fa;
+}
+
+.app-logo {
+  margin-left: calc(100vw / 2 - 35px);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 70px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  width: 820px;
+  margin: 0 auto;
+}
