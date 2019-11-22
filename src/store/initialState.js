@@ -26,6 +26,22 @@ const initialState = {
     },
   ],
   flightSearchConditions: [],
+  flightSortFilter: [
+    {
+      id: 'input-sort-cheapest',
+      name: 'sort-filter',
+      value: 'cheapest',
+      label: 'Самый дешевый',
+      checked: true,
+    },
+    {
+      id: 'input-sort-faster',
+      name: 'sort-filter',
+      value: 'faster',
+      label: 'Самый быстрый',
+      checked: false,
+    },
+  ],
   flightVariants: {
     isReceived: false,
     flights: [],
