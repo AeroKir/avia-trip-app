@@ -6,3 +6,7 @@
   margin-bottom: 20px;
   min-width: 200px;
 }
+
+.list-group-item-hidden {
+  display: none;
+}

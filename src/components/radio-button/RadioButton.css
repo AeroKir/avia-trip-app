@@ -75,17 +75,13 @@
           box-shadow: none;
 }
 
-/* .input-radio-default.simpleButtonView+.radio-check-box::before {
-  content: 'UAH';
-} */
-
-.input-radio-default.simpleButtonView:checked+.radio-check-box {
-  background-color: #0080ff;
-  color: #ffffff;
-}
-
 .input-radio-default.simpleButtonView:hover+.radio-check-box {
   background-color: #f2fcff;
   color: #339ff4;
   border: 1px solid #339ff4;
+}
+
+.input-radio-default.simpleButtonView:checked+.radio-check-box {
+  background-color: #0080ff;
+  color: #ffffff;
 }

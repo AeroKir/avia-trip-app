@@ -1,11 +1,8 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '../reducers/rootReducer';
 
-import { chooseUSDCurrency } from '../actions/chooseCurrency';
-
-const store = createStore(rootReducer);
-
-const dis = store.dispatch(chooseUSDCurrency);
-console.log(dis);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

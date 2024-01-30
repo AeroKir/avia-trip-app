@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import FlightSortFilterContainer from '../../containers/filters-container/FlightSortFilterContainer';
+import FlightCardContainer from '../../containers/flight-card-container/FlightCardContainer';
 
 import './Main.css';
 
-function Main({ children }) {
+function Main() {
   return (
     <main className="layout-main">
-      {children}
+      <FlightSortFilterContainer />
+      <FlightCardContainer />
     </main>
   );
 }
-
-Main.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Main;

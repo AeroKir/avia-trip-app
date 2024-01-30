@@ -19,7 +19,7 @@ const TICKETS = [{
   departure_time: '17:20',
   arrival_date: '12.05.18',
   arrival_time: '23:50',
-  carrier: '',
+  carrier: 'LH',
   stops: 1,
   price: 13100,
 }, {
@@ -31,7 +31,7 @@ const TICKETS = [{
   departure_time: '12:10',
   arrival_date: '12.05.18',
   arrival_time: '18:10',
-  carrier: 'SU',
+  carrier: 'EI',
   stops: 0,
   price: 15300,
 }, {
@@ -67,7 +67,7 @@ const TICKETS = [{
   departure_time: '9:40',
   arrival_date: '12.05.18',
   arrival_time: '19:25',
-  carrier: 'SU',
+  carrier: 'LY',
   stops: 3,
   price: 12450,
 }, {
@@ -103,7 +103,7 @@ const TICKETS = [{
   departure_time: '16:50',
   arrival_date: '12.05.18',
   arrival_time: '23:35',
-  carrier: 'SU',
+  carrier: 'FR',
   stops: 1,
   price: 16700,
 }, {
@@ -115,9 +115,10 @@ const TICKETS = [{
   departure_time: '6:10',
   arrival_date: '12.05.18',
   arrival_time: '16:15',
-  carrier: 'S7',
+  carrier: 'DL',
   stops: 0,
   price: 17400,
-}];
+},
+];
 
 export default TICKETS;

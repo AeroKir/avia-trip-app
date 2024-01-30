@@ -12,12 +12,11 @@
 
 .input-checkbox-default+.check-box {
   position: absolute;
-  margin-top: 0.2em;
-  margin-left: -1.5em;
+  margin-left: -1.7em;
   width: 18px;
   height: 18px;
   overflow: hidden;
-  border-radius: 0.05em;
+  border-radius: 3px;
   background-color: white;
   background-repeat: no-repeat;
   background-position: 50% 50%;

@@ -1,11 +1,10 @@
 body {
+  background-color: #f3f7fa;
   color: #494949;
   font-size: 14px;
 }
 
 .app-wrapper {
-  /* width: 100vw;
-  height: 100vh; */
   background-color: #f3f7fa;
 }
 
@@ -21,18 +20,4 @@ body {
   align-items: flex-start;
   width: 820px;
   margin: 0 auto;
-}
-
-/* Aside block */
-
-.currency-select-field {
-  margin-bottom: 30px;
-}
-
-.currency-select {
-  color: red;
-}
-
-.check-transfer-list {
-  margin-left: 20px;
 }

@@ -1,0 +1,50 @@
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 567px;
+  height: 300px;
+}
+
+.preloader-icon {
+  margin: 0 auto;
+  width: 70px;
+  height: auto;
+  -webkit-animation: spin 6s linear infinite;
+  -moz-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite;
+}
+
+.preloader-text {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,10 +1,15 @@
 import { combineReducers } from 'redux';
-import showFlights from './showFlights';
+import flightConditionsReducer from './flightConditionsReducer';
 import chooseCurrencyReducer from './chooseCurrencyReducer';
+import sortFlightsReducer from './sortFlightsReducer';
+import requestFlightsReducer from './requestFlightsReducer';
+import convertCurrencyReducer from './convertCurrencyReducer';
 
 const rootReducer = combineReducers({
-  chooseCurrencyReducer,
-  showFlights,
+  currency: chooseCurrencyReducer,
+  flightSearchConditions: flightConditionsReducer,
+  flightSortFilter: sortFlightsReducer,
+  flightVariants: requestFlightsReducer,
 });
 
 export default rootReducer;

@@ -1,3 +1,12 @@
 .layout-main {
   /* width: 80%; */
 }
+
+.flight-sort-filter {
+  width: 567px;
+  border: 1px solid red;
+}
+
+.flight-sort-filter-btn {
+  width: 200px;
+}
