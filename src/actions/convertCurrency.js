@@ -16,7 +16,9 @@ export function convertUAHToEUR(UAHPerEUR, value) {
 
 export function fetchUSDSaleRate(url, checkedCurrency) {
   return (dispatch) => {
-    fetch(url)
+    fetch(url, {
+      mode: 'no-cors',
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
@@ -45,7 +47,9 @@ export function fetchUSDSaleRate(url, checkedCurrency) {
 
 export function fetchEURSaleRate(url, checkedCurrency) {
   return (dispatch) => {
-    fetch(url)
+    fetch(url, {
+      mode: 'no-cors',
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
