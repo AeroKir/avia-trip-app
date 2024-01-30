@@ -2,12 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # SPA for showing Avia tickets with filters.
 ## View a working application [here](https://aerokir.github.io/avia-trip-app/).
-***
-# Description
+## Description
 What was done:
 - Used [React](https://reactjs.org/) and [Redux](https://redux.js.org/);
 - Implemented filters in various combinations;
-- Classes for stateful components 
+- Classes for stateful components
 ***
 ## Available Scripts
 ```sh
