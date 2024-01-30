@@ -7,7 +7,7 @@ import './Main.css';
 function Main() {
   return (
     <main className="layout-main">
-      <FlightSortFilterContainer />
+      {/* <FlightSortFilterContainer /> */}
       <FlightCardContainer />
     </main>
   );
