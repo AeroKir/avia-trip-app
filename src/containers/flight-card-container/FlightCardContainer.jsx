@@ -10,6 +10,7 @@ class FlightCardContainer extends React.Component {
       <div>
         {TICKETS.map(item => (
           <FlightCard
+            key={item.price}
             price={item.price}
             origin={item.origin}
             originName={item.origin_name}
