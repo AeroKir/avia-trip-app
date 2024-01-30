@@ -1,25 +1,21 @@
 {
   "files": {
-    "main.css": "/avia-trip-app/static/css/main.9db21b72.chunk.css",
-    "main.js": "/avia-trip-app/static/js/main.8c24729b.chunk.js",
-    "main.js.map": "/avia-trip-app/static/js/main.8c24729b.chunk.js.map",
+    "main.css": "/avia-trip-app/static/css/main.784f481b.chunk.css",
+    "main.js": "/avia-trip-app/static/js/main.f56b0b44.chunk.js",
+    "main.js.map": "/avia-trip-app/static/js/main.f56b0b44.chunk.js.map",
     "runtime~main.js": "/avia-trip-app/static/js/runtime~main.adfdfd23.js",
     "runtime~main.js.map": "/avia-trip-app/static/js/runtime~main.adfdfd23.js.map",
-    "static/js/2.05eeeae4.chunk.js": "/avia-trip-app/static/js/2.05eeeae4.chunk.js",
-    "static/js/2.05eeeae4.chunk.js.map": "/avia-trip-app/static/js/2.05eeeae4.chunk.js.map",
+    "static/js/2.4af3821c.chunk.js": "/avia-trip-app/static/js/2.4af3821c.chunk.js",
+    "static/js/2.4af3821c.chunk.js.map": "/avia-trip-app/static/js/2.4af3821c.chunk.js.map",
     "index.html": "/avia-trip-app/index.html",
-    "precache-manifest.1bb6c6cd93d1dd3040a23a7757175a1f.js": "/avia-trip-app/precache-manifest.1bb6c6cd93d1dd3040a23a7757175a1f.js",
+    "precache-manifest.8202fc43f926b1a3dd1ff5d50f69d767.js": "/avia-trip-app/precache-manifest.8202fc43f926b1a3dd1ff5d50f69d767.js",
     "service-worker.js": "/avia-trip-app/service-worker.js",
-    "static/css/main.9db21b72.chunk.css.map": "/avia-trip-app/static/css/main.9db21b72.chunk.css.map",
-    "static/media/Air_France_Logo.svg": "/avia-trip-app/static/media/Air_France_Logo.6260d5de.svg",
-    "static/media/Logo_of_El_Al_Israel_Airlines.svg": "/avia-trip-app/static/media/Logo_of_El_Al_Israel_Airlines.d3fb9c6b.svg",
-    "static/media/Ryanair.svg": "/avia-trip-app/static/media/Ryanair.98c36676.svg",
+    "static/css/main.784f481b.chunk.css.map": "/avia-trip-app/static/css/main.784f481b.chunk.css.map",
     "static/media/Checkbox.css": "/avia-trip-app/static/media/check-arrow.b9c49c69.svg",
+    "static/media/engine.svg": "/avia-trip-app/static/media/engine.e2219a28.svg",
     "static/media/globe.svg": "/avia-trip-app/static/media/globe.951e1682.svg",
-    "static/media/logo.svg": "/avia-trip-app/static/media/logo.5d5d9eef.svg",
-    "static/media/lufthansa-logo.svg": "/avia-trip-app/static/media/lufthansa-logo.4cd46e07.svg",
+    "static/media/info-icon.svg": "/avia-trip-app/static/media/info-icon.81a21cfb.svg",
     "static/media/FlightCard.css": "/avia-trip-app/static/media/plane-gray.e78481ea.svg",
-    "static/media/RadioButton.css": "/avia-trip-app/static/media/radio-check-dot.1738e37a.svg",
-    "static/media/turkish-airlines-logo-v1.svg": "/avia-trip-app/static/media/turkish-airlines-logo-v1.b48b60ba.svg"
+    "static/media/RadioButton.css": "/avia-trip-app/static/media/radio-check-dot.1738e37a.svg"
   }
 }
