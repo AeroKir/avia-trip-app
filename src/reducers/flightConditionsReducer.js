@@ -21,7 +21,7 @@ function flightConditionsReducer(state = initialState, action) {
               id: 'input-transfer-all',
               name: 'transfer',
               value: 'transfer-all',
-              label: 'Все',
+              label: 'Усі',
               checked: true,
               stops: 'all',
             },

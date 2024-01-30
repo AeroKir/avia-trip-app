@@ -12,7 +12,7 @@ function Aside() {
         <CurrencyBlockContainer />
       </fieldset>
       <fieldset className="transfer-select-field check-transfer-list">
-        <legend className="transfer-filter-legend">Количество пересадок</legend>
+        <legend className="transfer-filter-legend">Кількість пересадок</legend>
         <FlightStopsFilterContainer />
       </fieldset>
     </aside>

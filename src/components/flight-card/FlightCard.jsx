@@ -59,7 +59,7 @@ function FlightCard({
         />
         <Button className="flight-card-buy-btn">
           <span>
-            Купить за
+            Купити за
             {' '}
             {price}
             {currencySymbol}

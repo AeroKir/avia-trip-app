@@ -3,7 +3,7 @@ const FLIGHT_SEARCH_CONDITIONS = [
     id: 'input-transfer-all',
     name: 'transfer',
     value: 'transfer-all',
-    label: 'Все',
+    label: 'Усі',
   },
   {
     id: 'input-transfer-none',

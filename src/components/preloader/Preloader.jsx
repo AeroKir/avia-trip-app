@@ -21,7 +21,7 @@ function Preloader({
       {...attrs}
     >
       <Icon src={preloaderIcon} alt="preloader-icon" className="preloader-icon" />
-      <p className="preloader-text">Ищем авиабилеты</p>
+      <p className="preloader-text">Шукаємо авіаквитки</p>
     </div>
   );
 }
