@@ -28,6 +28,7 @@ class FlightCardContainer extends React.Component {
     const airlineLogoHeight = '150';
     const airlineLogoBgColor = 'ffffff';
 
+    // eslint-disable-next-line max-len
     const ticketsList = flightVariants.filter(ticket => flightSearchConditions.some(item => ticket.stops === item.stops && item.checked));
 
     const notCheckedFlights = flightSearchConditions.filter(item => !item.checked);
